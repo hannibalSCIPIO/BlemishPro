@@ -3,31 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blemish Pro - Mobile Auto Body & Paint</title>
+    <title>Blemish Pro - Auto Body Paint & Deep Cleaning</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #333; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
+        .cta-btn { background: #e94560; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; display: inline-block; }
+        .cta-btn:hover { transform: scale(1.05); }
+        .services { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .services h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: #f8f9fa; padding: 40px; border-radius: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #1a1a2e; }
+        .service-card p { color: #666; margin-bottom: 20px; }
+        .service-card a { color: #e94560; text-decoration: none; font-weight: 600; }
+        .highlight-bar { background: #f0f0f0; padding: 40px 20px; }
+        .highlight-bar h3 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .highlight-item { background: white; padding: 15px 25px; border-radius: 30px; font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .contact { background: #1a1a2e; color: white; padding: 60px 20px; text-align: center; }
+        .contact h2 { font-size: 2rem; margin-bottom: 20px; }
+        .contact p { font-size: 1.2rem; margin-bottom: 10px; }
+        .phone { font-size: 1.8rem; font-weight: bold; color: #e94560; text-decoration: none; }
+        footer { background: #0f0f1a; color: #888; padding: 20px; text-align: center; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
     <header>
         <a href="#" class="logo">BLEMISH <span>PRO</span></a>
         <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company since 1991</p>
-        <nav></nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Welcome to Blemish Pro</h1>
-            <p>Mobile auto body paint & repair services</p>
-            <p>Serving Salt Lake County & Utah County</p>
-            <p>Call or text: 801-810-9719</p>
-        </section>
+    <section class="hero">
+        <h1>We Come to You</h1>
+        <p>Mobile auto body paint & professional deep cleaning. Quality service at your location.</p>
+        <a href="tel:801-810-9719" class="cta-btn">Call or Text: 801-810-9719</a>
+    </section>
 
-        <section class="services" style="padding: 40px 20px; text-align: center;">
-            <p>Scroll down for more info or call us to get started.</p>
-        </section>
-    </main>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🎨 Auto Body & Paint</h3>
+                <p>Scratches, bumper repairs, paint blends — we fix it right at your location.</p>
+                <a href="paint.html">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <h3>🧹 Deep Cleaning</h3>
+                <p>Move-outs, Airbnb turnovers, recurring home cleaning. We make it sparkle.</p>
+                <a href="clean.html">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight-bar">
+        <h3>Why Customers Choose Us</h3>
+        <div class="highlights">
+            <span class="highlight-item">✅ We Answer 7am–11pm, 7 Days a Week</span>
+            <span class="highlight-item">✅ Same-Day Service Available</span>
+            <span class="highlight-item">✅ Online Booking Available</span>
+            <span class="highlight-item">✅ We Show You Exactly What Needs Repair</span>
+            <span class="highlight-item">✅ No Shop Needed — We Come to You</span>
+            <span class="highlight-item">✅ Local Experts You Can Trust</span>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Ready to Get Started?</h2>
+        <p>Call or text us today</p>
+        <a href="tel:801-810-9719" class="phone">801-810-9719</a>
+        <p style="margin-top: 20px; opacity: 0.8;">Serving Salt Lake County & Utah County</p>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Blemish Pro. All rights reserved.</p>
+        <p>&copy; 2026 Blemish Pro. A Tom Sawyer Painter Company since 1991.</p>
     </footer>
 </body>
 </html>
