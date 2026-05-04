@@ -1,86 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blemish Pro - Auto Body Paint & Deep Cleaning</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #333; }
-        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
-        .cta-btn { background: #e94560; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; display: inline-block; }
-        .cta-btn:hover { transform: scale(1.05); }
-        .services { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .services h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: #f8f9fa; padding: 40px; border-radius: 15px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #1a1a2e; }
-        .service-card p { color: #666; margin-bottom: 20px; }
-        .service-card a { color: #e94560; text-decoration: none; font-weight: 600; }
-        .highlight-bar { background: #f0f0f0; padding: 40px 20px; }
-        .highlight-bar h3 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
-        .highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .highlight-item { background: white; padding: 15px 25px; border-radius: 30px; font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .contact { background: #1a1a2e; color: white; padding: 60px 20px; text-align: center; }
-        .contact h2 { font-size: 2rem; margin-bottom: 20px; }
-        .contact p { font-size: 1.2rem; margin-bottom: 10px; }
-        .phone { font-size: 1.8rem; font-weight: bold; color: #e94560; text-decoration: none; }
-        footer { background: #0f0f1a; color: #888; padding: 20px; text-align: center; font-size: 0.9rem; }
-    </style>
+ <link rel="icon" type="image/jpg" href="/favicon.ico.jpg">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Blemish Pro - Mobile Auto Touch-Up & Deep Cleaning</title>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+ <style>
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+ :root {
+ --primary: #1a1a1a;
+ --accent: #c9a962;
+ --light: #faf9f7;
+ --dark: #0d0d0d;
+ }
+ 
+ body {
+ font-family: 'Inter', sans-serif;
+ background: var(--light);
+ color: var(--primary);
+ line-height: 1.6;
+ }
+ 
+ /* Header */
+ header {
+ background: #fff;
+ padding: 1rem 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 1px solid #eee;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ 
+ .logo {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 1.8rem;
+ letter-spacing: 2px;
+ color: var(--primary);
+ }
+ 
+ .logo span {
+ color: var(--accent);
+ }
+ 
+ nav a {
+ color: #666;
+ text-decoration: none;
+ margin-left: 2rem;
+ font-weight: 500;
+ transition: color 0.3s;
+ }
+ 
+ nav a:hover {
+ color: var(--accent);
+ }
+ 
+ /* Hero */
+ .hero {
+ background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+ color: #fff;
+ padding: 5rem 2rem;
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: radial-gradient(circle at 30% 70%, rgba(201, 169, 98, 0.15) 0%, transparent 50%);
+ }
+ 
+ .hero-content {
+ position: relative;
+ z-index: 2;
+ max-width: 800px;
+ margin: 0 auto;
+ }
+ 
+ .hero h1 {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: clamp(2.5rem, 8vw, 4.5rem);
+ letter-spacing: 3px;
+ margin-bottom: 0.5rem;
+ line-height: 1.1;
+ }
+ 
+ .hero h1 span {
+ color: var(--accent);
+ }
+ 
+ .hero .tagline {
+ font-size: 1.3rem;
+ opacity: 0.9;
+ margin-bottom: 2rem;
+ font-weight: 300;
+ }
+ 
+ .hero .location-badge {
+ display: inline-block;
+ background: var(--accent);
+ color: var(--dark);
+ padding: 0.5rem 1.5rem;
+ border-radius: 50px;
+ font-weight: 600;
+ margin-bottom: 2rem;
+ }
+ 
+ .cta-button {
+ display: inline-block;
+ background: var(--accent);
+ color: var(--dark);
+ padding: 1rem 3rem;
+ font-size: 1.1rem;
+ font-weight: 700;
+ text-decoration: none;
+ border-radius: 8px;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ 
+ .cta-button:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+ }
+ 
+ /* Benefits */
+ .benefits {
+ padding: 5rem 2rem;
+ background: #fff;
+ }
+ 
+ .benefits-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 2rem;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ 
+ .benefit-card {
+ text-align: center;
+ padding: 2rem;
+ border-radius: 12px;
+ background: var(--light);
+ transition: transform 0.3s;
+ }
+ 
+ .benefit-card:hover {
+ transform: translateY(-5px);
+ }
+ 
+ .benefit-card .icon {
+ font-size: 3rem;
+ margin-bottom: 1rem;
+ }
+ 
+ .benefit-card h3 {
+ font-size: 1.3rem;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .benefit-card p {
+ color: #666;
+ font-size: 0.95rem;
+ }
+ 
+ /* Services */
+ .services {
+ padding: 5rem 2rem;
+ background: var(--light);
+ }
+ 
+ .services h2 {
+ text-align: center;
+ font-size: 2rem;
+ margin-bottom: 3rem;
+ }
+ 
+ .services-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 1.5rem;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ 
+ .service-card {
+ padding: 2rem;
+ border: 2px solid #eee;
+ border-radius: 12px;
+ transition: border-color 0.3s;
+ text-align: center;
+ }
+ 
+ .service-card:hover {
+ border-color: var(--accent);
+ }
+ 
+ .service-card h3 {
+ font-size: 1.3rem;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .service-card p {
+ color: #666;
+ font-size: 0.95rem;
+ }
+ 
+ .service-card .cta {
+ display: inline-block;
+ margin-top: 1rem;
+ color: var(--accent);
+ font-weight: 600;
+ text-decoration: none;
+ }
+ 
+ /* CTA Section */
+ .cta-section {
+ padding: 5rem 2rem;
+ background: linear-gradient(135deg, var(--accent) 0%, #d4b872 100%);
+ text-align: center;
+ }
+ 
+ .cta-section h2 {
+ font-size: 2rem;
+ margin-bottom: 1rem;
+ color: var(--dark);
+ }
+ 
+ .cta-section p {
+ font-size: 1.1rem;
+ margin-bottom: 2rem;
+ color: var(--dark);
+ opacity: 0.8;
+ }
+ 
+ /* Footer */
+ footer {
+ background: var(--primary);
+ color: rgba(255,255,255,0.6);
+ text-align: center;
+ padding: 3rem 2rem;
+ }
+ 
+ footer .logo {
+ color: #fff;
+ margin-bottom: 1rem;
+ display: block;
+ }
+ 
+ footer p {
+ font-size: 0.9rem;
+ }
+ 
+ /* Mobile */
+ @media (max-width: 768px) {
+ header {
+ flex-direction: column;
+ gap: 1rem;
+ }
+ 
+ nav a {
+ margin: 0 1rem;
+ }
+ }
+ </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">BLEMISH <span>PRO</span></a>
-        <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company since 1991</p>
-    </header>
+ <header>
+ <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
+ <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company Est. 1991</p>
+ <nav>
+ <a href="paint.html">Paint & Body</a>
+ <a href="clean.html">Deep Cleaning</a>
+ <a href="#contact">Contact</a>
+ </nav>
+ </header>
 
-    <section class="hero">
-        <h1>We Come to You</h1>
-        <p>Mobile auto body paint & professional deep cleaning. Quality service at your location.</p>
-        <a href="tel:801-810-9719" class="cta-btn">Call or Text: 801-810-9719</a>
-    </section>
+ <section class="hero">
+ <div class="hero-content">
+ <h1>MOBILE AUTO <span>TOUCH-UP</span></h1>
+ <p class="tagline">Professional auto body paint & deep cleaning services. We come to you.</p>
+ <div class="location-badge">📍 Serving Salt Lake County & Utah County</div>
+ <br><br>
+ <a href="#services" class="cta-button">See Our Services</a>
+ </div>
+ </section>
 
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>🎨 Auto Body & Paint</h3>
-                <p>Scratches, bumper repairs, paint blends — we fix it right at your location.</p>
-                <a href="paint.html">Learn More →</a>
-            </div>
-            <div class="service-card">
-                <h3>🧹 Deep Cleaning</h3>
-                <p>Move-outs, Airbnb turnovers, recurring home cleaning. We make it sparkle.</p>
-                <a href="clean.html">Learn More →</a>
-            </div>
-        </div>
-    </section>
+ <section class="benefits" id="benefits">
+ <div class="benefits-grid">
+ <div class="benefit-card">
+ <div class="icon">🏠</div>
+ <h3>We Come to You</h3>
+ <p>No need to visit a shop. We service your vehicle or home at your location.</p>
+ </div>
+ <div class="benefit-card">
+ <div class="icon">⚡️</div>
+ <h3>Fast Service</h3>
+ <p>Most jobs completed same day. You don't wait days or weeks.</p>
+ </div>
+ <div class="benefit-card">
+ <div class="icon">💰</div>
+ <h3>Save Money</h3>
+ <p>40-60% less than traditional shops. No overhead means savings for you.</p>
+ </div>
+ <div class="benefit-card">
+ <div class="icon">✨</div>
+ <h3>Quality Results</h3>
+ <p>Professional results every time. We treat your property like it's our own.</p>
+ </div>
+ </div>
+ </section>
 
-    <section class="highlight-bar">
-        <h3>Why Customers Choose Us</h3>
-        <div class="highlights">
-            <span class="highlight-item">✅ We Answer 7am–11pm, 7 Days a Week</span>
-            <span class="highlight-item">✅ Same-Day Service Available</span>
-            <span class="highlight-item">✅ Online Booking Available</span>
-            <span class="highlight-item">✅ We Show You Exactly What Needs Repair</span>
-            <span class="highlight-item">✅ No Shop Needed — We Come to You</span>
-            <span class="highlight-item">✅ Local Experts You Can Trust</span>
-        </div>
-    </section>
+ <section class="services" id="services">
+ <h2>Our Services</h2>
+ <div class="services-grid">
+ <div class="service-card">
+ <h3>🎨 Auto Body & Paint</h3>
+ <p>Scratch repair, bumper scuffs, minor damage, and paint blending.</p>
+ <a href="paint.html" class="cta">Learn More →</a>
+ </div>
+ <div class="service-card">
+ <h3>🧹 Deep Cleaning</h3>
+ <p>Move-outs, Airbnb turnovers, recurring home cleaning.</p>
+ <a href="clean.html" class="cta">Learn More →</a>
+ </div>
+ </div>
+ </section>
 
-    <section class="contact">
-        <h2>Ready to Get Started?</h2>
-        <p>Call or text us today</p>
-        <a href="tel:801-810-9719" class="phone">801-810-9719</a>
-        <p style="margin-top: 20px; opacity: 0.8;">Serving Salt Lake County & Utah County</p>
-    </section>
+ <section class="cta-section" id="contact">
+ <h2>Let's Get Started</h2>
+ <p>Call or text us today — we answer 7 days a week!</p>
+ 
+ <a href="tel:8018109719" class="cta-button" style="background: var(--dark); color: #fff; font-size: 1.2rem; padding: 1.2rem 2.5rem;">📞 Call or Text: 801-810-9719</a>
+ 
+ <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--dark);">Serving Salt Lake County & Utah County</p>
+ </section>
 
-    <footer>
-        <p>&copy; 2026 Blemish Pro. A Tom Sawyer Painter Company since 1991.</p>
-    </footer>
+ <footer>
+ <span class="logo">BLEMISH <span>PRO</span></span>
+ <p>Mobile Auto Touch-Up & Deep Cleaning | Serving Salt Lake County & Utah County</p>
+ <p style="margin-top: 1rem; opacity: 0.6;">© 2026 Blemish Pro. All rights reserved.</p>
+ </footer>
 </body>
 </html>
