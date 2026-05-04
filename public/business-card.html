@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blemish Pro Business Card</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .card {
+            width: 3.5in;
+            height: 2in;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #1a1a1a, #c9a962);
+        }
+        
+        .left {
+            flex: 1;
+        }
+        
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+        
+        .logo span {
+            color: #c9a962;
+        }
+        
+        .tagline {
+            font-size: 0.55rem;
+            color: #999;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: #1a1a1a;
+            margin: 15px 0;
+        }
+        
+        .services {
+            font-size: 0.6rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 15px;
+        }
+        
+        .qr-container {
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        
+        .qr-container img {
+            display: block;
+        }
+        
+        .website {
+            font-size: 0.55rem;
+            color: #c9a962;
+            font-weight: 600;
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        .phone {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 12px;
+            text-decoration: none;
+        }
+        
+        .phone-label {
+            font-size: 0.5rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media print {
+            body { background: white; }
+            .card { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="left">
+            <div class="logo">BLEMISH <span>PRO</span></div>
+            <div class="tagline">A Tom Sawyer Painter Company Est. 1991</div>
+            <div class="divider"></div>
+            <div class="services">
+                Mobile Auto Touch-Up<br>
+                Deep Cleaning Services<br>
+                We Come to You
+            </div>
+        </div>
+        <div class="right">
+            <div class="qr-container" id="qrcode"></div>
+            <div class="website">blemishpro-mobile.com/clean</div>
+            <div class="phone-label">Call or Text</div>
+            <a href="tel:8018109719" class="phone">801-810-9719</a>
+        </div>
+    </div>
+
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://blemishpro-mobile.com/clean",
+            width: 80,
+            height: 80,
+            colorDark : "#1a1a1a",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
