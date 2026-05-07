@@ -1,0 +1,4 @@
+RewriteEngine On
+Redirect 301 /clean /clean.html
+Redirect 301 /paint /paint.html
+Redirect 301 /index /index.html
