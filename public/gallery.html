@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="icon" type="image/jpg" href="/favicon.ico.jpg">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Blemish Pro - Our Work</title>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+ <style>
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+ :root {
+ --primary: #1a1a1a;
+ --accent: #c9a962;
+ --light: #faf9f7;
+ --dark: #0d0d0d;
+ }
+ 
+ body {
+ font-family: 'Inter', sans-serif;
+ background: var(--light);
+ color: var(--primary);
+ line-height: 1.6;
+ }
+ 
+ /* Header */
+ header {
+ background: #fff;
+ padding: 1rem 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 1px solid #eee;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ 
+ .logo {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 1.8rem;
+ letter-spacing: 2px;
+ color: var(--primary);
+ }
+ 
+ .logo span {
+ color: var(--accent);
+ }
+ 
+ nav a {
+ color: #666;
+ text-decoration: none;
+ margin-left: 2rem;
+ font-weight: 500;
+ transition: color 0.3s;
+ }
+ 
+ nav a:hover {
+ color: var(--accent);
+ }
+ 
+ /* Hero */
+ .hero {
+ background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+ color: #fff;
+ padding: 4rem 2rem;
+ text-align: center;
+ }
+ 
+ .hero h1 {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: clamp(2.5rem, 8vw, 4rem);
+ letter-spacing: 3px;
+ }
+ 
+ .hero h1 span {
+ color: var(--accent);
+ }
+ 
+ .hero p {
+ font-size: 1.2rem;
+ opacity: 0.9;
+ max-width: 600px;
+ margin: 1rem auto 0;
+ }
+ 
+ /* Gallery */
+ .gallery {
+ padding: 4rem 2rem;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ 
+ .gallery-section {
+ margin-bottom: 5rem;
+ }
+ 
+ .gallery-section h2 {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 2.5rem;
+ letter-spacing: 2px;
+ text-align: center;
+ margin-bottom: 1rem;
+ }
+ 
+ .gallery-section .subtitle {
+ text-align: center;
+ color: #666;
+ margin-bottom: 2rem;
+ font-size: 1.1rem;
+ }
+ 
+ .photo-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 1.5rem;
+ }
+ 
+ .photo-pair {
+ background: white;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+ }
+ 
+ .photo-pair .label {
+ background: var(--primary);
+ color: white;
+ padding: 0.5rem 1rem;
+ font-size: 0.85rem;
+ font-weight: 600;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+ 
+ .photo-pair .images {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ }
+ 
+ .photo-pair .images img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+ display: block;
+ }
+ 
+ .photo-pair .images .before {
+ border-right: 2px solid white;
+ }
+ 
+ .photo-pair .description {
+ padding: 1rem;
+ font-size: 0.9rem;
+ color: #555;
+ text-align: center;
+ }
+ 
+ /* Placeholder */
+ .placeholder {
+ background: #e0e0e0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #888;
+ font-weight: 500;
+ min-height: 200px;
+ }
+ 
+ /* CTA */
+ .cta-section {
+ padding: 4rem 2rem;
+ background: linear-gradient(135deg, var(--accent) 0%, #d4b872 100%);
+ text-align: center;
+ }
+ 
+ .cta-section h2 {
+ font-size: 2rem;
+ color: var(--dark);
+ margin-bottom: 1rem;
+ }
+ 
+ .cta-section p {
+ font-size: 1.1rem;
+ margin-bottom: 2rem;
+ color: var(--dark);
+ opacity: 0.8;
+ }
+ 
+ .cta-button {
+ display: inline-block;
+ background: var(--dark);
+ color: #fff;
+ padding: 1rem 3rem;
+ font-size: 1.1rem;
+ font-weight: 700;
+ text-decoration: none;
+ border-radius: 8px;
+ }
+ 
+ footer {
+ background: var(--primary);
+ color: rgba(255,255,255,0.6);
+ text-align: center;
+ padding: 2rem;
+ }
+ 
+ @media (max-width: 768px) {
+ nav { display: none; }
+ .photo-grid { grid-template-columns: 1fr; }
+ }
+ </style>
+</head>
+<body>
+ <header>
+ <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
+ <nav>
+ <a href="paint.html">Paint & Body</a>
+ <a href="clean.html">Deep Cleaning</a>
+ <a href="#contact">Contact</a>
+ </nav>
+ </header>
+
+ <section class="hero">
+ <h1>OUR <span>WORK</span></h1>
+ <p>See the difference ourselves can make. Before and after photos from real jobs.</p>
+ </section>
+
+ <section class="gallery">
+ <!-- Auto Paint Section -->
+ <div class="gallery-section" id="paint">
+ <h2>AUTO BODY & PAINT</h2>
+ <p class="subtitle">Scratches, bumper damage, and paint repairs — restored like new</p>
+ 
+ <div class="photo-grid">
+ <!-- Example placeholder 1 -->
+ <div class="photo-pair">
+ <div class="label">Bumper Repair</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Bumper scuff repair and paint blend</div>
+ </div>
+ 
+ <!-- Example placeholder 2 -->
+ <div class="photo-pair">
+ <div class="label">Door Scratch</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Door scratch removal and paint match</div>
+ </div>
+ 
+ <!-- Example placeholder 3 -->
+ <div class="photo-pair">
+ <div class="label">Hood Damage</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Hood dent repair with paint</div>
+ </div>
+ 
+ <!-- Example placeholder 4 -->
+ <div class="photo-pair">
+ <div class="label">Fender Bender</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Rear bumper collision repair</div>
+ </div>
+ 
+ <!-- Example placeholder 5 -->
+ <div class="photo-pair">
+ <div class="label">Side Mirror</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Side mirror replacement & paint</div>
+ </div>
+ 
+ <!-- Example placeholder 6 -->
+ <div class="photo-pair">
+ <div class="label">Wheel Arch</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Wheel arch rust & paint repair</div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Deep Cleaning Section -->
+ <div class="gallery-section" id="clean">
+ <h2>DEEP CLEANING</h2>
+ <p class="subtitle">Move-outs, Airbnb turnovers, and detailed cleaning</p>
+ 
+ <div class="photo-grid">
+ <!-- Example placeholder 1 -->
+ <div class="photo-pair">
+ <div class="label">Bathroom Deep Clean</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Complete bathroom sanitize & detail</div>
+ </div>
+ 
+ <!-- Example placeholder 2 -->
+ <div class="photo-pair">
+ <div class="label">Kitchen Deep Clean</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Appliances, counters, cabinets inside & out</div>
+ </div>
+ 
+ <!-- Example placeholder 3 -->
+ <div class="photo-pair">
+ <div class="label">Move-Out Clean</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Full unit turnkey for deposit back</div>
+ </div>
+ 
+ <!-- Example placeholder 4 -->
+ <div class="photo-pair">
+ <div class="label">Airbnb Turnover</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Quick turn between guests</div>
+ </div>
+ 
+ <!-- Example placeholder 5 -->
+ <div class="photo-pair">
+ <div class="label">Carpet Deep Clean</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Steam clean & stain treatment</div>
+ </div>
+ 
+ <!-- Example placeholder 6 -->
+ <div class="photo-pair">
+ <div class="label">Windows</div>
+ <div class="images">
+ <div class="before placeholder">BEFORE</div>
+ <div class="placeholder">AFTER</div>
+ </div>
+ <div class="description">Interior & exterior window detail</div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section class="cta-section" id="contact">
+ <h2>Want Us to Work on Your Space?</h2>
+ <p>Send us photos of what needs attention. We'll take a look and call you!</p>
+ <a href="tel:8018109719" class="cta-button">📞 Call or Text: 801-810-9719</a>
+ </section>
+
+ <footer>
+ <span class="logo">BLEMISH <span>PRO</span></span>
+ <p>Mobile Auto Touch-Up & Deep Cleaning | Serving Wasatch Front</p>
+ <p>&copy; 2026 Blemish Pro. All rights reserved.</p>
+ </footer>
+</body>
+</html>
