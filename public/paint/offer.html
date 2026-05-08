@@ -56,6 +56,13 @@
  letter-spacing: 2px;
  }
  
+ .hero p {
+ font-size: 1.1rem;
+ opacity: 0.9;
+ max-width: 600px;
+ margin: 0.5rem auto 0;
+ }
+ 
  .quote-section {
  padding: 3rem 2rem;
  max-width: 700px;
@@ -143,6 +150,15 @@
  color: #666;
  }
  
+ .generator-note {
+ background: #fff3cd;
+ border: 1px solid #ffc107;
+ border-radius: 8px;
+ padding: 1rem;
+ margin-bottom: 1.5rem;
+ font-size: 0.85rem;
+ }
+ 
  footer {
  background: var(--primary);
  color: rgba(255,255,255,0.6);
@@ -154,7 +170,7 @@
 </head>
 <body>
  <header>
- <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
+ <a href="/index.html" class="logo">BLEMISH <span>PRO</span></a>
  </header>
 
  <section class="hero">
@@ -168,41 +184,41 @@
  
  <div class="quote-detail">
  <span class="label">Client Name</span>
- <span class="value">[CLIENT NAME]</span>
+ <span class="value" id="clientName">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Service Type</span>
- <span class="value">[SERVICE TYPE]</span>
+ <span class="value" id="serviceType">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Description</span>
- <span class="value">[DESCRIPTION]</span>
+ <span class="value" id="description">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Vehicle</span>
- <span class="value">[YEAR MAKE MODEL]</span>
+ <span class="value" id="vehicle">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Location</span>
- <span class="value">[SERVICE LOCATION]</span>
+ <span class="value" id="location">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Quote Valid Until</span>
- <span class="value">[VALID DATE]</span>
+ <span class="value" id="validDate">—</span>
  </div>
  
  <div class="quote-detail">
  <span class="label">Total Price</span>
- <span class="value price">$[PRICE]</span>
+ <span class="value price" id="price">—</span>
  </div>
  
  <div class="buttons">
- <a href="schedule.html" class="btn btn-primary">✅ Accept & Schedule</a>
+ <a href="/paint/schedule.html" class="btn btn-primary" id="scheduleBtn">✅ Accept & Schedule</a>
  <a href="tel:8018109719" class="btn btn-secondary">📞 Call to Discuss</a>
  </div>
  </div>
@@ -218,5 +234,19 @@
  <p>Mobile Auto Touch-Up | Serving Salt Lake County & Utah County</p>
  <p>&copy; 2026 Blemish Pro. All rights reserved.</p>
  </footer>
+
+ <script>
+ // Get URL parameters
+ const params = new URLSearchParams(window.location.search);
+ 
+ // Set values from URL or leave as placeholder
+ document.getElementById('clientName').textContent = params.get('client') || '[Client Name]';
+ document.getElementById('serviceType').textContent = params.get('service') || '[Service Type]';
+ document.getElementById('description').textContent = params.get('desc') || '[Description]';
+ document.getElementById('vehicle').textContent = params.get('vehicle') || '[Year Make Model]';
+ document.getElementById('location').textContent = params.get('location') || '[Location]';
+ document.getElementById('validDate').textContent = params.get('valid') || '[Valid Date]';
+ document.getElementById('price').textContent = params.get('price') ? '$' + params.get('price') : '$[Price]';
+ </script>
 </body>
 </html>
