@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="icon" type="image/jpg" href="/favicon.ico.jpg">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Accept Offer - Blemish Pro</title>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+ <style>
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+ :root {
+ --primary: #1a1a1a;
+ --accent: #c9a962;
+ --light: #faf9f7;
+ --dark: #0d0d0d;
+ }
+ 
+ body {
+ font-family: 'Inter', sans-serif;
+ background: var(--light);
+ color: var(--primary);
+ line-height: 1.6;
+ }
+ 
+ header {
+ background: #fff;
+ padding: 1rem 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 1px solid #eee;
+ }
+ 
+ .logo {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 1.8rem;
+ letter-spacing: 2px;
+ color: var(--primary);
+ }
+ 
+ .logo span {
+ color: var(--accent);
+ }
+ 
+ .hero {
+ background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+ color: #fff;
+ padding: 3rem 2rem;
+ text-align: center;
+ }
+ 
+ .hero h1 {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: clamp(2rem, 6vw, 3rem);
+ letter-spacing: 2px;
+ }
+ 
+ .form-section {
+ padding: 3rem 2rem;
+ max-width: 600px;
+ margin: 0 auto;
+ }
+ 
+ .form-card {
+ background: white;
+ border-radius: 12px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+ padding: 2rem;
+ }
+ 
+ .form-card h2 {
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 1.5rem;
+ margin-bottom: 1.5rem;
+ }
+ 
+ .form-group {
+ margin-bottom: 1.2rem;
+ }
+ 
+ .form-group label {
+ display: block;
+ font-weight: 600;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .form-group input,
+ .form-group textarea,
+ .form-group select {
+ width: 100%;
+ padding: 0.8rem;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ font-size: 1rem;
+ font-family: inherit;
+ }
+ 
+ .form-group textarea {
+ min-height: 100px;
+ resize: vertical;
+ }
+ 
+ .form-group input:focus,
+ .form-group textarea:focus,
+ .form-group select:focus {
+ outline: none;
+ border-color: var(--accent);
+ }
+ 
+ .btn {
+ display: inline-block;
+ width: 100%;
+ padding: 1rem;
+ font-size: 1.1rem;
+ font-weight: 700;
+ text-decoration: none;
+ border-radius: 8px;
+ background: var(--accent);
+ color: var(--dark);
+ border: none;
+ cursor: pointer;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ 
+ .btn:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ }
+ 
+ .quote-summary {
+ background: #f9f9f9;
+ padding: 1rem;
+ border-radius: 8px;
+ margin-bottom: 1.5rem;
+ }
+ 
+ .quote-summary h3 {
+ font-size: 1rem;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .quote-summary p {
+ font-size: 0.9rem;
+ color: #666;
+ margin: 0.3rem 0;
+ }
+ 
+ footer {
+ background: var(--primary);
+ color: rgba(255,255,255,0.6);
+ text-align: center;
+ padding: 2rem;
+ margin-top: 2rem;
+ }
+ </style>
+</head>
+<body>
+ <header>
+ <a href="/index.html" class="logo">BLEMISH <span>PRO</span></a>
+ </header>
+
+ <section class="hero">
+ <h1>ACCEPT <span>OFFER</span></h1>
+ <p>Great news! Ready to move forward? Please provide a few details.</p>
+ </section>
+
+ <section class="form-section">
+ <div class="form-card">
+ <h2>Your Service Quote</h2>
+ <div class="quote-summary">
+ <h3 id="serviceDisplay">Service: —</h3>
+ <p><strong>Vehicle:</strong> <span id="vehicleDisplay">—</span></p>
+ <p><strong>Price:</strong> <span id="priceDisplay" style="color: var(--accent); font-size: 1.2rem; font-weight: 700;">—</span></p>
+ </div>
+ 
+ <h2 style="margin-top: 1.5rem;">Service Details</h2>
+ <form id="detailsForm">
+ <div class="form-group">
+ <label for="name">Full Name *</label>
+ <input type="text" id="name" name="name" required>
+ </div>
+ 
+ <div class="form-group">
+ <label for="address">Service Address *</label>
+ <input type="text" id="address" name="address" placeholder="Street address" required>
+ </div>
+ 
+ <div class="form-group">
+ <label for="city">City *</label>
+ <input type="text" id="city" name="city" required>
+ </div>
+ 
+ <div class="form-group">
+ <label for="zip">ZIP Code *</label>
+ <input type="text" id="zip" name="zip" required>
+ </div>
+ 
+ <div class="form-group">
+ <label for="preferredDate">Preferred Date</label>
+ <input type="date" id="preferredDate" name="preferredDate">
+ </div>
+ 
+ <div class="form-group">
+ <label for="notes">Notes (parking instructions, access codes, etc.)</label>
+ <textarea id="notes" name="notes" placeholder="Any special instructions..."></textarea>
+ </div>
+ 
+ <button type="submit" class="btn">Continue to Schedule →</button>
+ </form>
+ </div>
+ </section>
+
+ <footer>
+ <span class="logo">BLEMISH <span>PRO</span></span>
+ <p>Mobile Auto Touch-Up | Serving Salt Lake County & Utah County</p>
+ <p>&copy; 2026 Blemish Pro. All rights reserved.</p>
+ </footer>
+
+ <script>
+ // Get URL parameters
+ const params = new URLSearchParams(window.location.search);
+ 
+ // Display quote info
+ document.getElementById('serviceDisplay').textContent = 'Service: ' + (params.get('service') || '—');
+ document.getElementById('vehicleDisplay').textContent = params.get('vehicle') || '—';
+ document.getElementById('priceDisplay').textContent = '$' + (params.get('price') || '0');
+ 
+ // Handle form submission
+ document.getElementById('detailsForm').addEventListener('submit', function(e) {
+ e.preventDefault();
+ 
+ // Build mailto link with all details
+ const name = document.getElementById('name').value;
+ const address = document.getElementById('address').value;
+ const city = document.getElementById('city').value;
+ const zip = document.getElementById('zip').value;
+ const preferredDate = document.getElementById('preferredDate').value;
+ const notes = document.getElementById('notes').value;
+ const service = params.get('service') || '—';
+ const vehicle = params.get('vehicle') || '—';
+ const price = params.get('price') || '—';
+ const client = params.get('client') || '—';
+ 
+ const subject = encodeURIComponent('Accepted Quote - ' + client);
+ const body = encodeURIComponent(
+ 'ACCEPTED QUOTE\n' +
+ 'Client: ' + client + '\n' +
+ 'Service: ' + service + '\n' +
+ 'Vehicle: ' + vehicle + '\n' +
+ 'Price: $' + price + '\n\n' +
+ 'SERVICE DETAILS:\n' +
+ 'Name: ' + name + '\n' +
+ 'Address: ' + address + '\n' +
+ 'City: ' + city + '\n' +
+ 'ZIP: ' + zip + '\n' +
+ 'Preferred Date: ' + preferredDate + '\n' +
+ 'Notes: ' + notes
+ );
+ 
+ // Send email notification
+ window.location.href = 'mailto:blemishpro@gmail.com?subject=' + subject + '&body=' + body;
+ 
+ // Then go to Calendly
+ setTimeout(function() {
+ window.location.href = '/paint/schedule.html';
+ }, 1500);
+ });
+ </script>
+</body>
+</html>
