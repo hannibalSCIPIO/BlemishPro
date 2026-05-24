@@ -34,6 +34,7 @@
  position: sticky;
  top: 0;
  z-index: 100;
+ transition: transform 0.12s ease-out;
  }
  
  .logo {
@@ -67,6 +68,7 @@
  text-align: center;
  position: relative;
  overflow: hidden;
+ min-height: 50vh;
  }
  
  .hero::before {
@@ -77,6 +79,7 @@
  right: 0;
  bottom: 0;
  background: radial-gradient(circle at 30% 70%, rgba(201, 169, 98, 0.15) 0%, transparent 50%);
+ pointer-events: none;
  }
  
  .hero-content {
@@ -84,6 +87,7 @@
  z-index: 2;
  max-width: 800px;
  margin: 0 auto;
+ transition: transform 0.1s ease-out;
  }
  
  .hero h1 {
@@ -132,10 +136,24 @@
  box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
  }
  
+ /* Floating elements */
+ .float-element {
+ position: absolute;
+ pointer-events: none;
+ opacity: 0.08;
+ transition: transform 0.1s ease-out;
+ }
+ 
+ .float-circle {
+ border-radius: 50%;
+ background: var(--accent);
+ }
+ 
  /* Benefits */
  .benefits {
  padding: 5rem 2rem;
  background: #fff;
+ position: relative;
  }
  
  .benefits-grid {
@@ -151,7 +169,7 @@
  padding: 2rem;
  border-radius: 12px;
  background: var(--light);
- transition: transform 0.3s;
+ transition: transform 0.3s, transform 0.1s ease-out;
  }
  
  .benefit-card:hover {
@@ -177,6 +195,7 @@
  .comparison {
  padding: 5rem 2rem;
  background: var(--light);
+ position: relative;
  }
  
  .comparison-container {
@@ -199,6 +218,7 @@
  .comparison-card {
  padding: 2rem;
  border-radius: 12px;
+ transition: transform 0.1s ease-out;
  }
  
  .comparison-card.traditional {
@@ -247,6 +267,7 @@
  .services {
  padding: 5rem 2rem;
  background: #fff;
+ position: relative;
  }
  
  .services h2 {
@@ -267,7 +288,7 @@
  padding: 1.5rem;
  border: 2px solid #eee;
  border-radius: 12px;
- transition: border-color 0.3s;
+ transition: border-color 0.3s, transform 0.1s ease-out;
  }
  
  .service-card:hover {
@@ -285,11 +306,90 @@
  font-weight: 700;
  }
  
+ /* Gallery */
+ .gallery-section {
+ padding: 3rem 2rem;
+ background: #faf9f7;
+ position: relative;
+ }
+ 
+ .gallery-section > div {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 2rem;
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ 
+ .gallery-section h3 {
+ text-align: center;
+ margin-bottom: 1rem;
+ font-size: 1.3rem;
+ }
+ 
+ .gallery-column {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ }
+ 
+ .gallery-item {
+ background: white;
+ border-radius: 8px;
+ overflow: hidden;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ transition: transform 0.1s ease-out;
+ }
+ 
+ .gallery-item img {
+ width: 100%;
+ height: 150px;
+ object-fit: cover;
+ }
+ 
+ .before-after-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0.5rem;
+ }
+ 
+ .before-after-item {
+ background: white;
+ border-radius: 8px;
+ overflow: hidden;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ transition: transform 0.1s ease-out;
+ }
+ 
+ .before-after-item img {
+ width: 100%;
+ height: 120px;
+ object-fit: cover;
+ }
+ 
+ .before-label, .after-label {
+ text-align: center;
+ font-size: 0.75rem;
+ padding: 0.3rem;
+ margin: 0;
+ }
+ 
+ .before-label {
+ background: #333;
+ color: #fff;
+ }
+ 
+ .after-label {
+ background: var(--accent);
+ color: #000;
+ }
+ 
  /* CTA Section */
  .cta-section {
  padding: 5rem 2rem;
  background: linear-gradient(135deg, var(--accent) 0%, #d4b872 100%);
  text-align: center;
+ position: relative;
  }
  
  .cta-section h2 {
@@ -311,6 +411,7 @@
  color: rgba(255,255,255,0.6);
  text-align: center;
  padding: 3rem 2rem;
+ transition: transform 0.1s ease-out;
  }
  
  footer .logo {
@@ -337,11 +438,15 @@
  nav a {
  margin: 0 1rem;
  }
+ 
+ .gallery-section > div {
+ grid-template-columns: 1fr;
+ }
  }
  </style>
 </head>
 <body>
- <header>
+ <header id="header">
  <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
  <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company Est. 1991</p>
  <nav>
@@ -351,8 +456,13 @@
  </nav>
  </header>
 
- <section class="hero">
- <div class="hero-content">
+ <section class="hero" id="hero">
+ <!-- Floating decorative elements -->
+ <div class="float-element float-circle" style="width: 300px; height: 300px; top: 10%; left: -5%;" data-speed="0.03"></div>
+ <div class="float-element float-circle" style="width: 200px; height: 200px; top: 60%; right: -3%;" data-speed="0.04"></div>
+ <div class="float-element float-circle" style="width: 150px; height: 150px; bottom: 5%; left: 20%;" data-speed="0.02"></div>
+ 
+ <div class="hero-content" id="hero-content">
  <h1>MOBILE AUTO <span>TOUCH-UP</span></h1>
  <p class="tagline">We come to you. Fix car paint blemishes at your home or office.</p>
  <div class="location-badge">📍 Serving Salt Lake County & Utah County</div>
@@ -363,22 +473,22 @@
 
  <section class="benefits" id="benefits">
  <div class="benefits-grid">
- <div class="benefit-card">
+ <div class="benefit-card" data-speed="0.015">
  <div class="icon">🏠</div>
  <h3>We Come to You</h3>
  <p>No need to leave your car at a body shop for days. We fix it right in your driveway or office parking lot.</p>
  </div>
- <div class="benefit-card">
+ <div class="benefit-card" data-speed="0.02">
  <div class="icon">⚡️</div>
  <h3>Fast Service</h3>
  <p>Most repairs done in 2-3 hours. You're not without your car for days or weeks.</p>
  </div>
- <div class="benefit-card">
+ <div class="benefit-card" data-speed="0.025">
  <div class="icon">💰</div>
  <h3>Save Money</h3>
  <p>40-60% less than traditional body shop prices. You pay for the result, not the overhead.</p>
  </div>
- <div class="benefit-card">
+ <div class="benefit-card" data-speed="0.018">
  <div class="icon">✨</div>
  <h3>Like New Finish</h3>
  <p>Professional results that blend seamlessly with your car's original paint.</p>
@@ -388,9 +498,9 @@
 
  <section class="comparison">
  <div class="comparison-container">
- <h2>Traditional Body Shop vs. Blemish Pro</h2>
+ <h2 data-speed="0.012">Traditional Body Shop vs. Blemish Pro</h2>
  <div class="comparison-grid">
- <div class="comparison-card traditional">
+ <div class="comparison-card traditional" data-speed="0.008">
  <h3>🏪 Traditional Body Shop</h3>
  <ul>
  <li>Leave your car for 3-7 days</li>
@@ -401,7 +511,7 @@
  <li>Complex paperwork</li>
  </ul>
  </div>
- <div class="comparison-card blemish-pro">
+ <div class="comparison-card blemish-pro" data-speed="0.022">
  <h3>✨ Blemish Pro Mobile</h3>
  <ul>
  <li>Done in 2-3 hours</li>
@@ -417,22 +527,22 @@
  </section>
 
  <section class="services" id="services">
- <h2>Our Services</h2>
+ <h2 data-speed="0.01">Our Services</h2>
  <p style="max-width: 600px; margin: 0 auto 2rem; text-align: center; font-size: 1.1rem;">We handle most repairs for <strong>40-60% less</strong> than traditional body shops — no overhead means savings pass to you.</p>
  <div class="services-grid">
- <div class="service-card">
+ <div class="service-card" data-speed="0.012">
  <h3>🚗 Scratch Repair</h3>
  <p>Remove surface scratches and restore paint</p>
  </div>
- <div class="service-card">
+ <div class="service-card" data-speed="0.018">
  <h3>🛡 Bumper Scuffs</h3>
  <p>Fix bumper scuffs and minor impacts</p>
  </div>
- <div class="service-card">
+ <div class="service-card" data-speed="0.022">
  <h3>💥 Minor Damage</h3>
  <p>Small dents with paint damage</p>
  </div>
- <div class="service-card">
+ <div class="service-card" data-speed="0.015">
  <h3>💡 Headlight Restoration</h3>
  <p>Clear foggy headlights (when combined with another service)</p>
  </div>
@@ -440,25 +550,25 @@
  </section>
 
  </section>
- <section style="padding: 3rem 2rem; background: #faf9f7;">
+ <section class="gallery-section" style="padding: 3rem 2rem; background: #faf9f7;">
  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
  <!-- Bumper Column -->
  <div>
  <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.3rem;">BUMPERS</h3>
- <div style="display: flex; flex-direction: column; gap: 1rem;">
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+ <div class="gallery-column">
+ <div class="gallery-item" data-speed="0.008">
  <img src="bumper1.png" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+ <div class="gallery-item" data-speed="0.015">
  <img src="bumper2.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+ <div class="gallery-item" data-speed="0.02">
  <img src="bumper4.webp" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+ <div class="gallery-item" data-speed="0.012">
  <img src="bumper13.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+ <div class="gallery-item" data-speed="0.025">
  <img src="bumper scuff.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
  </div>
  </div>
@@ -466,48 +576,48 @@
  <!-- Headlights Column -->
  <div>
  <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.3rem;">HEADLIGHTS</h3>
- <div style="display: flex; flex-direction: column; gap: 1rem;">
+ <div class="gallery-column">
  <!-- Before/After Pair 1: Alexei -->
- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #333; color: #fff; margin: 0;">BEFORE</p>
+ <div class="before-after-grid" data-speed="0.01">
+ <div class="before-after-item">
+ <p class="before-label">BEFORE</p>
  <img src="pics/before alexei driver headlight.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #c9a962; color: #000; margin: 0;">AFTER</p>
+ <div class="before-after-item">
+ <p class="after-label">AFTER</p>
  <img src="pics/after alexei driver headlight.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
  </div>
  <!-- Before/After Pair 2: Alexei Side -->
- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #333; color: #fff; margin: 0;">BEFORE</p>
+ <div class="before-after-grid" data-speed="0.018">
+ <div class="before-after-item">
+ <p class="before-label">BEFORE</p>
  <img src="pics/before alexei driver headlight side.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #c9a962; color: #000; margin: 0;">AFTER</p>
+ <div class="before-after-item">
+ <p class="after-label">AFTER</p>
  <img src="pics/after alexei driver headlight a.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
  </div>
  <!-- Before/After Pair 3: Drago -->
- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #333; color: #fff; margin: 0;">BEFORE</p>
+ <div class="before-after-grid" data-speed="0.022">
+ <div class="before-after-item">
+ <p class="before-label">BEFORE</p>
  <img src="pics/before drago driver headlight.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #c9a962; color: #000; margin: 0;">AFTER</p>
+ <div class="before-after-item">
+ <p class="after-label">AFTER</p>
  <img src="pics/after drago driver.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
  </div>
  <!-- Before/After Pair 4: Drago Side -->
- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #333; color: #fff; margin: 0;">BEFORE</p>
+ <div class="before-after-grid" data-speed="0.012">
+ <div class="before-after-item">
+ <p class="before-label">BEFORE</p>
  <img src="pics/before drago driver headlight side.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
- <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
- <p style="text-align: center; font-size: 0.75rem; padding: 0.3rem; background: #c9a962; color: #000; margin: 0;">AFTER</p>
+ <div class="before-after-item">
+ <p class="after-label">AFTER</p>
  <img src="pics/after drago driver side.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
  </div>
  </div>
@@ -517,7 +627,7 @@
  </section>
 
  <section class="cta-section" id="contact" style="padding: 2rem;">
- <h2>Get Your Free Quote</h2>
+ <h2 data-speed="0.008">Get Your Free Quote</h2>
  <p>Fill out the form below and we'll contact you within 24 hours!</p>
  
  <div style="background: white; border-radius: 12px; padding: 1rem; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
@@ -527,10 +637,72 @@
  <p style="margin-top: 1.5rem; font-size: 0.9rem;">Or call/text us directly: <a href="tel:8018109719" style="color: var(--dark); font-weight: 700;">801-810-9719</a></p>
  </section>
 
- <footer>
+ <footer id="footer">
  <span class="logo">BLEMISH <span>PRO</span></span>
  <p>Mobile Auto Touch-Up | Serving Salt Lake County & Utah County</p>
  <p style="margin-top: 1rem; opacity: 0.6;">© 2026 Blemish Pro. All rights reserved.</p>
  </footer>
+
+ <script>
+ // Mouse parallax effect
+ (function() {
+ const elements = document.querySelectorAll('[data-speed]');
+ const heroContent = document.getElementById('hero-content');
+ const header = document.getElementById('header');
+ const footer = document.getElementById('footer');
+ const floatElements = document.querySelectorAll('.float-element');
+ 
+ let mouseX = 0;
+ let mouseY = 0;
+ let targetX = 0;
+ let targetY = 0;
+ 
+ // Track mouse position
+ document.addEventListener('mousemove', (e) => {
+ mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+ mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+ });
+ 
+ // Smooth animation loop
+ function animate() {
+ targetX += (mouseX - targetX) * 0.08;
+ targetY += (mouseY - targetY) * 0.08;
+ 
+ // Hero content - slight movement opposite to mouse
+ if (heroContent) {
+ const contentSpeed = 15;
+ heroContent.style.transform = `translate(${targetX * -contentSpeed}px, ${targetY * -contentSpeed}px)`;
+ }
+ 
+ // Header - very subtle
+ if (header) {
+ header.style.transform = `translate(${targetX * -3}px, ${targetY * -1}px)`;
+ }
+ 
+ // Footer - subtle
+ if (footer) {
+ footer.style.transform = `translate(${targetX * -5}px, ${targetY * -2}px)`;
+ }
+ 
+ // Elements with data-speed
+ elements.forEach(el => {
+ const speed = parseFloat(el.getAttribute('data-speed')) * 100;
+ el.style.transform = `translate(${targetX * speed}px, ${targetY * speed}px)`;
+ });
+ 
+ // Floating decorative elements
+ floatElements.forEach(el => {
+ const speed = parseFloat(el.getAttribute('data-speed')) || 0.02;
+ const maxMove = 50;
+ el.style.transform = `translate(${targetX * maxMove * speed}px, ${targetY * maxMove * speed}px)`;
+ });
+ 
+ requestAnimationFrame(animate);
+ }
+ 
+ // Start animation
+ animate();
+ })();
+ </script>
 </body>
 </html>
