@@ -4,7 +4,7 @@
  <link rel="icon" type="image/jpg" href="/favicon.ico.jpg">
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Blemish Pro | Mobile Auto Touch-Up</title>
+ <title>Blemish Pro | Mobile Auto Body & Paint - Northern Utah</title>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
  <style>
  * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -68,7 +68,10 @@
  text-align: center;
  position: relative;
  overflow: hidden;
- min-height: 50vh;
+ min-height: 60vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
  }
  
  .hero::before {
@@ -86,7 +89,6 @@
  position: relative;
  z-index: 2;
  max-width: 800px;
- margin: 0 auto;
  transition: transform 0.1s ease-out;
  }
  
@@ -119,6 +121,35 @@
  margin-bottom: 2rem;
  }
  
+ .hero .subtitle {
+ font-size: 1.1rem;
+ margin-bottom: 1.5rem;
+ opacity: 0.9;
+ }
+ 
+ .hero .features {
+ display: flex;
+ justify-content: center;
+ gap: 3rem;
+ margin-bottom: 2rem;
+ flex-wrap: wrap;
+ }
+ 
+ .hero .feature {
+ text-align: center;
+ }
+ 
+ .hero .feature strong {
+ display: block;
+ font-size: 1.5rem;
+ color: var(--accent);
+ }
+ 
+ .hero .feature span {
+ font-size: 0.9rem;
+ opacity: 0.8;
+ }
+ 
  .cta-button {
  display: inline-block;
  background: var(--accent);
@@ -149,58 +180,109 @@
  background: var(--accent);
  }
  
- /* Benefits */
- .benefits {
+ /* Content Sections */
+ .content-section {
  padding: 5rem 2rem;
- background: #fff;
- position: relative;
+ max-width: 1100px;
+ margin: 0 auto;
  }
  
- .benefits-grid {
+ .content-section h2 {
+ font-size: 2rem;
+ margin-bottom: 1rem;
+ text-align: center;
+ }
+ 
+ .content-section h3 {
+ font-size: 1.5rem;
+ margin-bottom: 1rem;
+ }
+ 
+ .content-section p {
+ font-size: 1.05rem;
+ line-height: 1.8;
+ color: #444;
+ margin-bottom: 1.5rem;
+ }
+ 
+ /* Services Grid */
+ .services-section {
+ padding: 5rem 2rem;
+ background: #fff;
+ }
+ 
+ .services-section h2 {
+ text-align: center;
+ font-size: 2rem;
+ margin-bottom: 3rem;
+ }
+ 
+ .services-grid {
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
  gap: 2rem;
  max-width: 1100px;
  margin: 0 auto;
  }
  
- .benefit-card {
- text-align: center;
+ .service-card {
  padding: 2rem;
+ border: 2px solid #eee;
  border-radius: 12px;
- background: var(--light);
- transition: transform 0.3s, transform 0.1s ease-out;
+ transition: border-color 0.3s, transform 0.1s ease-out;
+ text-align: center;
  }
  
- .benefit-card:hover {
- transform: translateY(-5px);
+ .service-card:hover {
+ border-color: var(--accent);
  }
  
- .benefit-card .icon {
- font-size: 3rem;
+ .service-card .icon {
+ font-size: 2.5rem;
  margin-bottom: 1rem;
  }
  
- .benefit-card h3 {
+ .service-card h3 {
  font-size: 1.3rem;
  margin-bottom: 0.5rem;
  }
  
- .benefit-card p {
+ .service-card p {
  color: #666;
  font-size: 0.95rem;
+ margin-bottom: 1rem;
+ }
+ 
+ .service-card ul {
+ text-align: left;
+ list-style: none;
+ margin-bottom: 1.5rem;
+ }
+ 
+ .service-card li {
+ padding: 0.3rem 0;
+ padding-left: 1.5rem;
+ position: relative;
+ }
+ 
+ .service-card li::before {
+ content: '✓';
+ color: var(--accent);
+ position: absolute;
+ left: 0;
+ }
+ 
+ .service-card .cta {
+ display: inline-block;
+ color: var(--accent);
+ font-weight: 600;
+ text-decoration: none;
  }
  
  /* Comparison */
  .comparison {
  padding: 5rem 2rem;
  background: var(--light);
- position: relative;
- }
- 
- .comparison-container {
- max-width: 900px;
- margin: 0 auto;
  }
  
  .comparison h2 {
@@ -213,12 +295,13 @@
  display: grid;
  grid-template-columns: 1fr 1fr;
  gap: 2rem;
+ max-width: 900px;
+ margin: 0 auto;
  }
  
  .comparison-card {
  padding: 2rem;
  border-radius: 12px;
- transition: transform 0.1s ease-out;
  }
  
  .comparison-card.traditional {
@@ -233,9 +316,6 @@
  .comparison-card h3 {
  font-size: 1.3rem;
  margin-bottom: 1rem;
- display: flex;
- align-items: center;
- gap: 0.5rem;
  }
  
  .comparison-card ul {
@@ -263,57 +343,19 @@
  margin-right: 0.5rem;
  }
  
- /* Services */
- .services {
+ /* Gallery */
+ .gallery-section {
  padding: 5rem 2rem;
  background: #fff;
- position: relative;
  }
  
- .services h2 {
+ .gallery-section h2 {
  text-align: center;
  font-size: 2rem;
  margin-bottom: 3rem;
  }
  
- .services-grid {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
- gap: 1.5rem;
- max-width: 1100px;
- margin: 0 auto;
- }
- 
- .service-card {
- padding: 1.5rem;
- border: 2px solid #eee;
- border-radius: 12px;
- transition: border-color 0.3s, transform 0.1s ease-out;
- }
- 
- .service-card:hover {
- border-color: var(--accent);
- }
- 
- .service-card h3 {
- font-size: 1.1rem;
- margin-bottom: 0.5rem;
- }
- 
- .service-card .price {
- color: var(--accent);
- font-size: 1.5rem;
- font-weight: 700;
- }
- 
- /* Gallery */
- .gallery-section {
- padding: 3rem 2rem;
- background: #faf9f7;
- position: relative;
- }
- 
- .gallery-section > div {
+ .gallery-grid {
  display: grid;
  grid-template-columns: 1fr 1fr;
  gap: 2rem;
@@ -321,13 +363,13 @@
  margin: 0 auto;
  }
  
- .gallery-section h3 {
+ .gallery-column h3 {
  text-align: center;
- margin-bottom: 1rem;
+ margin-bottom: 1.5rem;
  font-size: 1.3rem;
  }
  
- .gallery-column {
+ .gallery-images {
  display: flex;
  flex-direction: column;
  gap: 1rem;
@@ -338,7 +380,6 @@
  border-radius: 8px;
  overflow: hidden;
  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
- transition: transform 0.1s ease-out;
  }
  
  .gallery-item img {
@@ -358,7 +399,6 @@
  border-radius: 8px;
  overflow: hidden;
  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
- transition: transform 0.1s ease-out;
  }
  
  .before-after-item img {
@@ -384,12 +424,47 @@
  color: #000;
  }
  
+ /* FAQ */
+ .faq-section {
+ padding: 5rem 2rem;
+ background: var(--light);
+ }
+ 
+ .faq-section h2 {
+ text-align: center;
+ font-size: 2rem;
+ margin-bottom: 3rem;
+ }
+ 
+ .faq-grid {
+ max-width: 800px;
+ margin: 0 auto;
+ }
+ 
+ .faq-item {
+ background: #fff;
+ border-radius: 8px;
+ padding: 1.5rem;
+ margin-bottom: 1rem;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+ }
+ 
+ .faq-item h3 {
+ font-size: 1.1rem;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .faq-item p {
+ color: #666;
+ font-size: 0.95rem;
+ margin: 0;
+ }
+ 
  /* CTA Section */
  .cta-section {
  padding: 5rem 2rem;
  background: linear-gradient(135deg, var(--accent) 0%, #d4b872 100%);
  text-align: center;
- position: relative;
  }
  
  .cta-section h2 {
@@ -424,6 +499,40 @@
  font-size: 0.9rem;
  }
  
+ footer a {
+ color: var(--accent);
+ text-decoration: none;
+ }
+ 
+ footer .hours {
+ margin: 1.5rem 0;
+ }
+ 
+ footer .hours strong {
+ display: block;
+ color: #fff;
+ margin-bottom: 0.5rem;
+ }
+ 
+ footer ul {
+ list-style: none;
+ text-align: left;
+ max-width: 300px;
+ margin: 0 auto;
+ }
+ 
+ footer li {
+ padding: 0.3rem 0;
+ }
+ 
+ footer li a {
+ color: rgba(255,255,255,0.6);
+ }
+ 
+ footer li a:hover {
+ color: var(--accent);
+ }
+ 
  /* Mobile */
  @media (max-width: 768px) {
  .comparison-grid {
@@ -439,8 +548,13 @@
  margin: 0 1rem;
  }
  
- .gallery-section > div {
+ .gallery-grid {
  grid-template-columns: 1fr;
+ }
+ 
+ .hero .features {
+ flex-direction: column;
+ gap: 1.5rem;
  }
  }
  </style>
@@ -450,9 +564,9 @@
  <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
  <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company Est. 1991</p>
  <nav>
- <a href="#benefits">Benefits</a>
  <a href="#services">Services</a>
- <a href="#contact">Contact</a>
+ <a href="#gallery">Gallery</a>
+ <a href="#contact">Get Estimate</a>
  </nav>
  </header>
 
@@ -463,44 +577,115 @@
  <div class="float-element float-circle" style="width: 150px; height: 150px; bottom: 5%; left: 20%;" data-speed="0.02"></div>
  
  <div class="hero-content" id="hero-content">
- <h1>MOBILE AUTO <span>TOUCH-UP</span></h1>
- <p class="tagline">We come to you. Fix car paint blemishes at your home or office.</p>
- <div class="location-badge">📍 Serving Salt Lake County & Utah County</div>
- <br><br>
- <a href="#contact" class="cta-button">Let's Get Started</a>
+ <h1>Mobile Auto Body <span>& Paint</span></h1>
+ <p class="tagline">Professional repairs - We come to you!</p>
+ <div class="location-badge">📍 Serving Northern Utah</div>
+ <p class="subtitle">Save 40-60% vs Traditional Body Shops.<br>Same-day mobile service means no waiting, no rental cars, no hassle.</p>
+ <div class="features">
+ <div class="feature">
+ <strong>2-4 Hours</strong>
+ <span>All jobs completed same day</span>
+ </div>
+ <div class="feature">
+ <strong>100% Mobile</strong>
+ <span>We come to your location</span>
+ </div>
+ <div class="feature">
+ <strong>5-Star Service</strong>
+ <span>Northern Utah's top-rated</span>
+ </div>
+ </div>
+ <a href="#contact" class="cta-button">Get Free Estimate</a>
  </div>
  </section>
 
- <section class="benefits" id="benefits">
- <div class="benefits-grid">
- <div class="benefit-card" data-speed="0.015">
- <div class="icon">🏠</div>
- <h3>We Come to You</h3>
- <p>No need to leave your car at a body shop for days. We fix it right in your driveway or office parking lot.</p>
+ <section class="content-section" id="about">
+ <h2>Mobile Auto Body Repair Near Me in Northern Utah</h2>
+ <h3>Same-Day Mobile Auto Body Repair</h3>
+ <p>When your car, truck, or van needs paint repair, scratch and dent removal, or bumper repair, Blemish Pro saves vehicle owners time and money because we come directly to you to complete the work the same day. You'll avoid the hassle, lost time and expense of taking your vehicle to a body shop. <strong>We're fast, convenient and safe!</strong> We can complete all mobile auto body repair work in just a few hours!</p>
+ </section>
+
+ <section class="services-section" id="services">
+ <h2>Our Services</h2>
+ <div class="services-grid">
+ <div class="service-card" data-speed="0.015">
+ <div class="icon">🚗</div>
+ <h3>Mobile Dent Repair & Paintless Dent Removal</h3>
+ <p>Dents aren't just unsightly. They can damage your vehicle's paint, allowing water to seep in and attack the metal. We've perfected the process of mobile dent repair, removing ugly dings, dents and other damage with paintless dent removal techniques.</p>
+ <ul>
+ <li>Paintless dent removal</li>
+ <li>Traditional bodywork</li>
+ <li>Same-day completion</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
  </div>
- <div class="benefit-card" data-speed="0.02">
- <div class="icon">⚡️</div>
- <h3>Fast Service</h3>
- <p>Most repairs done in 2-3 hours. You're not without your car for days or weeks.</p>
+ 
+ <div class="service-card" data-speed="0.02">
+ <div class="icon">💫</div>
+ <h3>Car Scratch Repair & Mobile Paint Touch Ups</h3>
+ <p>We specialize in restoring paint and eliminating scratches, gouges and scrapes that are the result of non-collision damage. Our mobile car paint repair experts bring the body shop to your door!</p>
+ <ul>
+ <li>Professional color matching</li>
+ <li>Scratch & gouge removal</li>
+ <li>Non-collision damage repair</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
  </div>
- <div class="benefit-card" data-speed="0.025">
- <div class="icon">💰</div>
- <h3>Save Money</h3>
- <p>40-60% less than traditional body shop prices. You pay for the result, not the overhead.</p>
+ 
+ <div class="service-card" data-speed="0.025">
+ <div class="icon">🛡</div>
+ <h3>Mobile Bumper Repair — Cracks, Dents & Scrapes</h3>
+ <p>Our mobile bumper repair service is fast and convenient and will restore your vehicle's bumper to showroom quality. We can fix dents, cracks and scrapes that are the result of non-collision damage.</p>
+ <ul>
+ <li>Dent & crack repair</li>
+ <li>Showroom quality finish</li>
+ <li>Onsite service in hours</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
  </div>
- <div class="benefit-card" data-speed="0.018">
- <div class="icon">✨</div>
- <h3>Like New Finish</h3>
- <p>Professional results that blend seamlessly with your car's original paint.</p>
+ 
+ <div class="service-card" data-speed="0.018">
+ <div class="icon">🔮</div>
+ <h3>Car Ceramic Coating</h3>
+ <p>Protect your vehicle's paint with our professional ceramic coating service. This advanced protective layer creates a hydrophobic surface that repels water, dirt, and contaminants while providing exceptional gloss and shine.</p>
+ <ul>
+ <li>Long-lasting paint protection</li>
+ <li>Hydrophobic water repellent</li>
+ <li>UV & oxidation resistance</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
+ </div>
+ 
+ <div class="service-card" data-speed="0.022">
+ <div class="icon">🎨</div>
+ <h3>Mobile Paint Touch-Up Service</h3>
+ <p>Professional paint touch-up service for chips, nicks and small paint imperfections. We color-match your vehicle's exact paint code and blend seamlessly to restore that factory-fresh look.</p>
+ <ul>
+ <li>Exact color matching</li>
+ <li>Chip & nick repair</li>
+ <li>Mobile convenience</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
+ </div>
+ 
+ <div class="service-card" data-speed="0.012">
+ <div class="icon">💡</div>
+ <h3>Headlight Restoration</h3>
+ <p>Cloudy, yellowed headlights reduce visibility and hurt your car's appearance. Our mobile headlight restoration service removes oxidation and UV damage to restore crystal-clear lenses.</p>
+ <ul>
+ <li>Removes oxidation & yellowing</li>
+ <li>Improves nighttime visibility</li>
+ <li>Done at your location</li>
+ </ul>
+ <a href="#contact" class="cta">Learn more →</a>
  </div>
  </div>
  </section>
 
  <section class="comparison">
- <div class="comparison-container">
- <h2 data-speed="0.012">Traditional Body Shop vs. Blemish Pro</h2>
+ <h2>Traditional Body Shop vs. Blemish Pro Mobile</h2>
  <div class="comparison-grid">
- <div class="comparison-card traditional" data-speed="0.008">
+ <div class="comparison-card traditional">
  <h3>🏪 Traditional Body Shop</h3>
  <ul>
  <li>Leave your car for 3-7 days</li>
@@ -511,10 +696,10 @@
  <li>Complex paperwork</li>
  </ul>
  </div>
- <div class="comparison-card blemish-pro" data-speed="0.022">
+ <div class="comparison-card blemish-pro">
  <h3>✨ Blemish Pro Mobile</h3>
  <ul>
- <li>Done in 2-3 hours</li>
+ <li>Done in 2-4 hours</li>
  <li>We come to you</li>
  <li>Spot repair & blend</li>
  <li>No shop overhead</li>
@@ -523,102 +708,72 @@
  </ul>
  </div>
  </div>
- </div>
  </section>
 
- <section class="services" id="services">
- <h2 data-speed="0.01">Our Services</h2>
- <p style="max-width: 600px; margin: 0 auto 2rem; text-align: center; font-size: 1.1rem;">We handle most repairs for <strong>40-60% less</strong> than traditional body shops — no overhead means savings pass to you.</p>
- <div class="services-grid">
- <div class="service-card" data-speed="0.012">
- <h3>🚗 Scratch Repair</h3>
- <p>Remove surface scratches and restore paint</p>
- </div>
- <div class="service-card" data-speed="0.018">
- <h3>🛡 Bumper Scuffs</h3>
- <p>Fix bumper scuffs and minor impacts</p>
- </div>
- <div class="service-card" data-speed="0.022">
- <h3>💥 Minor Damage</h3>
- <p>Small dents with paint damage</p>
- </div>
- <div class="service-card" data-speed="0.015">
- <h3>💡 Headlight Restoration</h3>
- <p>Clear foggy headlights (when combined with another service)</p>
- </div>
- </div>
- </section>
-
- </section>
- <section class="gallery-section" style="padding: 3rem 2rem; background: #faf9f7;">
- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
- <!-- Bumper Column -->
- <div>
- <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.3rem;">BUMPERS</h3>
+ <section class="gallery-section" id="gallery">
+ <h2>Our Work</h2>
+ <div class="gallery-grid">
  <div class="gallery-column">
- <div class="gallery-item" data-speed="0.008">
- <img src="bumper1.png" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
+ <h3>BUMPERS</h3>
+ <div class="gallery-images">
+ <div class="gallery-item">
+ <img src="bumper1.png" alt="Bumper Repair">
  </div>
- <div class="gallery-item" data-speed="0.015">
- <img src="bumper2.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
+ <div class="gallery-item">
+ <img src="bumper2.jpg" alt="Bumper Repair">
  </div>
- <div class="gallery-item" data-speed="0.02">
- <img src="bumper4.webp" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
+ <div class="gallery-item">
+ <img src="bumper4.webp" alt="Bumper Repair">
  </div>
- <div class="gallery-item" data-speed="0.012">
- <img src="bumper13.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
+ <div class="gallery-item">
+ <img src="bumper13.jpg" alt="Bumper Repair">
  </div>
- <div class="gallery-item" data-speed="0.025">
- <img src="bumper scuff.jpg" alt="Bumper" style="width: 100%; height: 150px; object-fit: cover;">
+ <div class="gallery-item">
+ <img src="bumper scuff.jpg" alt="Bumper Repair">
  </div>
  </div>
  </div>
- <!-- Headlights Column -->
- <div>
- <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.3rem;">HEADLIGHTS</h3>
  <div class="gallery-column">
- <!-- Before/After Pair 1: Alexei -->
- <div class="before-after-grid" data-speed="0.01">
+ <h3>HEADLIGHTS</h3>
+ <div class="gallery-images">
+ <div class="before-after-grid">
  <div class="before-after-item">
  <p class="before-label">BEFORE</p>
- <img src="pics/before alexei driver headlight.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/before alexei driver headlight.jpg" alt="Before">
  </div>
  <div class="before-after-item">
  <p class="after-label">AFTER</p>
- <img src="pics/after alexei driver headlight.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/after alexei driver headlight.jpg" alt="After">
  </div>
  </div>
- <!-- Before/After Pair 2: Alexei Side -->
- <div class="before-after-grid" data-speed="0.018">
+ <div class="before-after-grid">
  <div class="before-after-item">
  <p class="before-label">BEFORE</p>
- <img src="pics/before alexei driver headlight side.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/before alexei driver headlight side.jpg" alt="Before">
  </div>
  <div class="before-after-item">
  <p class="after-label">AFTER</p>
- <img src="pics/after alexei driver headlight a.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/after alexei driver headlight a.jpg" alt="After">
  </div>
  </div>
- <!-- Before/After Pair 3: Drago -->
- <div class="before-after-grid" data-speed="0.022">
+ <div class="before-after-grid">
  <div class="before-after-item">
  <p class="before-label">BEFORE</p>
- <img src="pics/before drago driver headlight.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/before drago driver headlight.jpg" alt="Before">
  </div>
  <div class="before-after-item">
  <p class="after-label">AFTER</p>
- <img src="pics/after drago driver.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/after drago driver.jpg" alt="After">
  </div>
  </div>
- <!-- Before/After Pair 4: Drago Side -->
- <div class="before-after-grid" data-speed="0.012">
+ <div class="before-after-grid">
  <div class="before-after-item">
  <p class="before-label">BEFORE</p>
- <img src="pics/before drago driver headlight side.jpg" alt="Before" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/before drago driver headlight side.jpg" alt="Before">
  </div>
  <div class="before-after-item">
  <p class="after-label">AFTER</p>
- <img src="pics/after drago driver side.jpg" alt="After" style="width: 100%; height: 120px; object-fit: cover;">
+ <img src="pics/after drago driver side.jpg" alt="After">
  </div>
  </div>
  </div>
@@ -626,21 +781,67 @@
  </div>
  </section>
 
- <section class="cta-section" id="contact" style="padding: 2rem;">
- <h2 data-speed="0.008">Get Your Free Quote</h2>
- <p>Fill out the form below and we'll contact you within 24 hours!</p>
- 
- <div style="background: white; border-radius: 12px; padding: 1rem; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+ <section class="faq-section">
+ <h2>Frequently Asked Questions About Mobile Auto Body Repair</h2>
+ <div class="faq-grid">
+ <div class="faq-item">
+ <h3>How much does mobile auto body repair cost?</h3>
+ <p>Most repairs cost 40-60% less than traditional body shops. Typical jobs range from $600-$800 depending on the damage. We provide free estimates!</p>
+ </div>
+ <div class="faq-item">
+ <h3>Can scratches and dents be fixed at my home or office?</h3>
+ <p>Yes! That's the beauty of our mobile service. We bring all the tools and materials to your location and complete the work right in your driveway or parking lot.</p>
+ </div>
+ <div class="faq-item">
+ <h3>How long does mobile auto body repair take?</h3>
+ <p>Most repairs are completed in 2-4 hours. Same-day service means you're not without your vehicle for days or weeks.</p>
+ </div>
+ <div class="faq-item">
+ <h3>What areas do you serve?</h3>
+ <p>We serve all of Northern Utah. Contact us to confirm we service your specific area.</p>
+ </div>
+ <div class="faq-item">
+ <h3>Do you offer same-day service?</h3>
+ <p>Yes! Most jobs can be completed the same day you contact us. Same-day slots fill fast, so book today!</p>
+ </div>
+ <div class="faq-item">
+ <h3>Is mobile auto body repair as good as a traditional body shop?</h3>
+ <p>Absolutely. Our technicians are trained professionals with years of experience. We use the same professional-grade materials and techniques as body shops - we just come to you.</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="cta-section" id="contact">
+ <h2>Ready to Get Your Vehicle Fixed?</h2>
+ <p>Same-day mobile service throughout Northern Utah • Free estimates • No obligation</p>
+ <a href="tel:8018109719" class="cta-button" style="background: var(--dark); color: #fff; font-size: 1.2rem; padding: 1.2rem 2.5rem;">📞 Call or Text: 801-810-9719</a>
+ <br><br>
+ <div style="background: white; border-radius: 12px; padding: 1rem; max-width: 600px; margin: 2rem auto 0; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
  <iframe src="https://docs.google.com/forms/d/e/3SnUosXRiF3cFpwQ7/viewform?usp=header&embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
  </div>
- 
- <p style="margin-top: 1.5rem; font-size: 0.9rem;">Or call/text us directly: <a href="tel:8018109719" style="color: var(--dark); font-weight: 700;">801-810-9719</a></p>
  </section>
 
  <footer id="footer">
  <span class="logo">BLEMISH <span>PRO</span></span>
- <p>Mobile Auto Touch-Up | Serving Salt Lake County & Utah County</p>
- <p style="margin-top: 1rem; opacity: 0.6;">© 2026 Blemish Pro. All rights reserved.</p>
+ <p>Professional mobile auto body repair services throughout Northern Utah. We bring the body shop to your door.</p>
+ 
+ <div class="hours">
+ <strong>Business Hours</strong>
+ <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+ <p>Sat: 9:00 AM - 4:00 PM</p>
+ <p>Sun: Closed</p>
+ </div>
+ 
+ <ul>
+ <li><a href="#services">Mobile Dent Repair</a></li>
+ <li><a href="#services">Scratch & Scuff Repair</a></li>
+ <li><a href="#services">Bumper Repair</a></li>
+ <li><a href="#services">Paint Touch-Up</a></li>
+ <li><a href="#services">Ceramic Coating</a></li>
+ <li><a href="#services">Headlight Restoration</a></li>
+ </ul>
+ 
+ <p style="margin-top: 2rem;">© 2026 Blemish Pro. All rights reserved. | Licensed & Insured Auto Body Repair</p>
  </footer>
 
  <script>
@@ -657,50 +858,40 @@
  let targetX = 0;
  let targetY = 0;
  
- // Track mouse position
  document.addEventListener('mousemove', (e) => {
  mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
  mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
  });
  
- // Smooth animation loop
  function animate() {
  targetX += (mouseX - targetX) * 0.08;
  targetY += (mouseY - targetY) * 0.08;
  
- // Hero content - slight movement opposite to mouse
  if (heroContent) {
- const contentSpeed = 15;
- heroContent.style.transform = `translate(${targetX * -contentSpeed}px, ${targetY * -contentSpeed}px)`;
+ heroContent.style.transform = `translate(${targetX * -15}px, ${targetY * -15}px)`;
  }
  
- // Header - very subtle
  if (header) {
  header.style.transform = `translate(${targetX * -3}px, ${targetY * -1}px)`;
  }
  
- // Footer - subtle
  if (footer) {
  footer.style.transform = `translate(${targetX * -5}px, ${targetY * -2}px)`;
  }
  
- // Elements with data-speed
  elements.forEach(el => {
  const speed = parseFloat(el.getAttribute('data-speed')) * 100;
  el.style.transform = `translate(${targetX * speed}px, ${targetY * speed}px)`;
  });
  
- // Floating decorative elements
  floatElements.forEach(el => {
  const speed = parseFloat(el.getAttribute('data-speed')) || 0.02;
- const maxMove = 50;
- el.style.transform = `translate(${targetX * maxMove * speed}px, ${targetY * maxMove * speed}px)`;
+ el.style.transform = `translate(${targetX * 50 * speed}px, ${targetY * 50 * speed}px)`;
  });
  
  requestAnimationFrame(animate);
  }
  
- // Start animation
  animate();
  })();
  </script>
