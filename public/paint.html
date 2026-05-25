@@ -226,15 +226,18 @@
  }
  
  .service-card {
+ display: block;
  padding: 2rem;
  border: 2px solid #eee;
  border-radius: 12px;
- transition: border-color 0.3s, transform 0.1s ease-out;
+ transition: border-color 0.3s, transform 0.1s ease-out, box-shadow 0.3s;
  text-align: center;
+ cursor: pointer;
  }
  
  .service-card:hover {
  border-color: var(--accent);
+ box-shadow: 0 8px 25px rgba(0,0,0,0.15);
  }
  
  .service-card .icon {
@@ -613,7 +616,7 @@
  <section class="services-section" id="services">
  <h2>Our Services</h2>
  <div class="services-grid">
- <div class="service-card" data-speed="0.015">
+ <a href="dent-repair.html" class="service-card" data-speed="0.015">
  <div class="icon">🚗</div>
  <h3>Mobile Dent Repair & Paintless Dent Removal</h3>
  <p>Dents aren't just unsightly. They can damage your vehicle's paint, allowing water to seep in and attack the metal. We've perfected the process of mobile dent repair, removing ugly dings, dents and other damage with paintless dent removal techniques.</p>
@@ -622,10 +625,10 @@
  <li>Traditional bodywork</li>
  <li>Same-day completion</li>
  </ul>
- <a href="dent-repair.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  
- <div class="service-card" data-speed="0.02">
+ <a href="scratch-repair.html" class="service-card" data-speed="0.02">
  <div class="icon">💫</div>
  <h3>Car Scratch Repair & Mobile Paint Touch Ups</h3>
  <p>We specialize in restoring paint and eliminating scratches, gouges and scrapes that are the result of non-collision damage. Our mobile car paint repair experts bring the body shop to your door!</p>
@@ -634,10 +637,10 @@
  <li>Scratch & gouge removal</li>
  <li>Non-collision damage repair</li>
  </ul>
- <a href="scratch-repair.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  
- <div class="service-card" data-speed="0.025">
+ <a href="bumper-repair.html" class="service-card" data-speed="0.025">
  <div class="icon">🛡</div>
  <h3>Mobile Bumper Repair — Cracks, Dents & Scrapes</h3>
  <p>Our mobile bumper repair service is fast and convenient and will restore your vehicle's bumper to showroom quality. We can fix dents, cracks and scrapes that are the result of non-collision damage.</p>
@@ -646,10 +649,10 @@
  <li>Showroom quality finish</li>
  <li>Onsite service in hours</li>
  </ul>
- <a href="bumper-repair.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  
- <div class="service-card" data-speed="0.018">
+ <a href="ceramic-coating.html" class="service-card" data-speed="0.018">
  <div class="icon">🔮</div>
  <h3>Car Ceramic Coating</h3>
  <p>Protect your vehicle's paint with our professional ceramic coating service. This advanced protective layer creates a hydrophobic surface that repels water, dirt, and contaminants while providing exceptional gloss and shine.</p>
@@ -658,10 +661,10 @@
  <li>Hydrophobic water repellent</li>
  <li>UV & oxidation resistance</li>
  </ul>
- <a href="ceramic-coating.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  
- <div class="service-card" data-speed="0.022">
+ <a href="paint-touchup.html" class="service-card" data-speed="0.022">
  <div class="icon">🎨</div>
  <h3>Mobile Paint Touch-Up Service</h3>
  <p>Professional paint touch-up service for chips, nicks and small paint imperfections. We color-match your vehicle's exact paint code and blend seamlessly to restore that factory-fresh look.</p>
@@ -670,10 +673,10 @@
  <li>Chip & nick repair</li>
  <li>Mobile convenience</li>
  </ul>
- <a href="paint-touchup.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  
- <div class="service-card" data-speed="0.012">
+ <a href="headlight-restoration.html" class="service-card" data-speed="0.012">
  <div class="icon">💡</div>
  <h3>Headlight Restoration</h3>
  <p>Cloudy, yellowed headlights reduce visibility and hurt your car's appearance. Our mobile headlight restoration service removes oxidation and UV damage to restore crystal-clear lenses.</p>
@@ -682,8 +685,8 @@
  <li>Improves nighttime visibility</li>
  <li>Done at your location</li>
  </ul>
- <a href="headlight-restoration.html" class="cta">Learn more →</a>
- </div>
+ <span class="cta">Learn more →</span>
+ </a>
  </div>
  </section>
 
