@@ -15,6 +15,7 @@
  .logo span { color: var(--accent); }
  nav a { color: #666; text-decoration: none; margin-left: 2rem; font-weight: 500; }
  nav a:hover { color: var(--accent); }
+ .dropdown { position: relative; display: inline-block; margin-left: 2rem; } .dropdown-content { display: none; position: absolute; background: #fff; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 8px; z-index: 1000; top: 100%; left: 0; margin-top: 0.5rem; overflow: hidden; } .dropdown-content a { color: #333; padding: 12px 16px; display: block; margin: 0; border-radius: 0; font-weight: 500; } .dropdown-content a:hover { background: var(--light); color: var(--accent); } .dropdown:hover .dropdown-content { display: block; } .dropdown > a::after { content: ' ▼'; font-size: 0.7rem; }
  .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #fff; padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; min-height: 50vh; display: flex; align-items: center; justify-content: center; }
  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 70%, rgba(201, 169, 98, 0.15) 0%, transparent 50%); pointer-events: none; }
  .hero-content { position: relative; z-index: 2; max-width: 800px; }
@@ -50,13 +51,19 @@
 <body>
  <header>
  <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
+ 
  <nav>
+ <div class="dropdown">
  <a href="paint.html#services">Services</a>
- <a href="dent-repair.html">Dent</a>
- <a href="scratch-repair.html">Scratch</a>
- <a href="bumper-repair.html">Bumper</a>
- <a href="ceramic-coating.html">Ceramic</a>
- <a href="headlight-restoration.html">Lights</a>
+ <div class="dropdown-content">
+ <a href="dent-repair.html">Dent Repair</a>
+ <a href="scratch-repair.html">Scratch Repair</a>
+ <a href="bumper-repair.html">Bumper Repair</a>
+ <a href="paint-touchup.html">Paint Touch-Up</a>
+ <a href="ceramic-coating.html">Ceramic Coating</a>
+ <a href="headlight-restoration.html">Headlight Restoration</a>
+ </div>
+ </div>
  <a href="paint.html#gallery">Gallery</a>
  <a href="paint.html#contact">Contact</a>
  </nav>

@@ -48,6 +48,10 @@
  color: var(--accent);
  }
  
+ nav {
+ position: relative;
+ }
+ 
  nav a {
  color: #666;
  text-decoration: none;
@@ -58,6 +62,50 @@
  
  nav a:hover {
  color: var(--accent);
+ }
+ 
+ /* Dropdown */
+ .dropdown {
+ position: relative;
+ display: inline-block;
+ margin-left: 2rem;
+ }
+ 
+ .dropdown-content {
+ display: none;
+ position: absolute;
+ background: #fff;
+ min-width: 200px;
+ box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+ border-radius: 8px;
+ z-index: 1000;
+ top: 100%;
+ left: 0;
+ margin-top: 0.5rem;
+ overflow: hidden;
+ }
+ 
+ .dropdown-content a {
+ color: #333;
+ padding: 12px 16px;
+ display: block;
+ margin: 0;
+ border-radius: 0;
+ font-weight: 500;
+ }
+ 
+ .dropdown-content a:hover {
+ background: var(--light);
+ color: var(--accent);
+ }
+ 
+ .dropdown:hover .dropdown-content {
+ display: block;
+ }
+ 
+ .dropdown > a::after {
+ content: ' ▼';
+ font-size: 0.7rem;
  }
  
  /* Hero */
@@ -567,12 +615,17 @@
  <a href="index.html" class="logo">BLEMISH <span>PRO</span></a>
  <p style="font-size: 0.65rem; color: #999; margin-top: -5px; font-family: 'Inter', sans-serif;"><img src="child-silhouette.jpg" alt="" style="height: 12px; vertical-align: middle; margin-right: 4px;"> a Tom Sawyer Painter Company Est. 1991</p>
  <nav>
+ <div class="dropdown">
  <a href="paint.html#services">Services</a>
+ <div class="dropdown-content">
  <a href="dent-repair.html">Dent Repair</a>
  <a href="scratch-repair.html">Scratch Repair</a>
- <a href="bumper-repair.html">Bumper</a>
- <a href="ceramic-coating.html">Ceramic</a>
- <a href="headlight-restoration.html">Headlights</a>
+ <a href="bumper-repair.html">Bumper Repair</a>
+ <a href="paint-touchup.html">Paint Touch-Up</a>
+ <a href="ceramic-coating.html">Ceramic Coating</a>
+ <a href="headlight-restoration.html">Headlight Restoration</a>
+ </div>
+ </div>
  <a href="#gallery">Gallery</a>
  <a href="#contact">Get Estimate</a>
  </nav>
